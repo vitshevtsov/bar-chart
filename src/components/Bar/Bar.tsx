@@ -6,7 +6,7 @@ import './Bar.css';
 /**
  * Компонент Столбец диаграммы
  */
-const Bar: React.FC<BarProps> = (props) => {
+const Bar = (props: BarProps) => {
   // текст размещаем на 5px выше границы столбца
   const yPointText = props.yPoint - 5;
 

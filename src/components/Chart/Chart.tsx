@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import { BarGroup } from '../BarGroup';
 import { Legend } from '../Legend';
 import { ChartProps } from './ChartProps';
@@ -9,48 +10,49 @@ import './Chart.css';
 /**
  * Компонент Столбчатая диаграмма
  */
-const Chart: React.FC<ChartProps> = (props) => {
+const Chart = ({ barGap = 20, barWidth = 50, maxMainAxisLength = 600, showValues = false, ...props }: ChartProps) => {
   const maxValue = getMaxValue(props.data.datasets);
 
+  const chartClassName = React.useMemo(() => {
+    return clsx(
+      'chart',
+      {
+        ['chart--horizontal']: props.horizontal,
+      },
+      props.className,
+    );
+  }, [props.className, props.horizontal]);
+
+  const chartGroupsClassName = React.useMemo(() => {
+    return clsx('chart__groups', {
+      ['chart__groups--wrap']: props.wrap,
+      ['chart__groups--horizontal']: props.horizontal,
+    });
+  }, [props.horizontal, props.wrap]);
+
   return (
-    <div className={`chart ${props.horizontal && 'chart--horizontal'} ${props.className ?? ''}`}>
+    <div className={chartClassName}>
       <Legend datasets={props.data.datasets} />
 
-      <div
-        className={`
-                chart__groups 
-                ${props.wrap && 'chart__groups--wrap'}
-                ${props.horizontal && 'chart__groups--horizontal'}
-                `}
-      >
+      <div className={chartGroupsClassName}>
         {props.data.labels.map((label, index) => {
           return (
             <BarGroup
-              barGap={props.barGap!}
-              barWidth={props.barWidth!}
+              barGap={barGap}
+              barWidth={barWidth}
               data={props.data}
               horizontal={props.horizontal}
               key={label}
               labelIndex={index}
-              maxSVGHeight={props.maxMainAxisLength!}
+              maxSVGHeight={maxMainAxisLength}
               maxValue={maxValue}
-              showValues={props.showValues!}
+              showValues={showValues}
             />
           );
         })}
       </div>
     </div>
   );
-};
-
-/**
- * Свойства по умолчанию
- */
-Chart.defaultProps = {
-  barGap: 20,
-  barWidth: 50,
-  maxMainAxisLength: 600,
-  showValues: false,
 };
 
 export default Chart;
