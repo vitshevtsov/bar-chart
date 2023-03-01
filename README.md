@@ -8,9 +8,9 @@
 
 Вы можете запустить dev-сервер. Приложение содержит небольшое демо в компоненте App:
 
-![Демо 1](public\readme_demo_1.png)
+![Демо 1](https://github.com/vitshevtsov/bar-chart/blob/main/public/readme_demo_1.png)
 
-![Демо 2](public\readme_demo_2.png)
+![Демо 2](https://github.com/vitshevtsov/bar-chart/blob/main/public/readme_demo_2.png)
 
 ### `npm run build`
 
