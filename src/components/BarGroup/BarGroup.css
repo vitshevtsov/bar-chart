@@ -1,0 +1,17 @@
+.bar-group__container {
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.bar-group__label {
+    margin: auto;
+    padding: 15px;
+}
+
+.bar-group__label--horizontal {
+    padding: 25px;
+    transform: rotate(-90deg);
+}

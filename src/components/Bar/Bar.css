@@ -1,0 +1,7 @@
+.bar {
+    opacity: 0.7;
+}
+
+.bar:hover {
+    opacity: 1;
+}

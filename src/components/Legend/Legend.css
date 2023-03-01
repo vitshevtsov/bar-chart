@@ -1,0 +1,10 @@
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.legend__item {
+    display: inline-block;
+    padding: 20px;
+    min-width: 25%;
+}

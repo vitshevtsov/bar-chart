@@ -1,0 +1,18 @@
+.chart {
+    display: flex;
+}
+
+.chart__groups {
+    background-color: #ccc;
+    display: flex;
+    gap: 20px;
+}
+
+.chart__groups--wrap {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.chart__groups--horizontal {
+    transform: rotate(90deg);
+}
