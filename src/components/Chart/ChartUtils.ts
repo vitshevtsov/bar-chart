@@ -6,15 +6,15 @@ import { Dataset } from '../../models';
  * @returns максимальное значение
  */
 export const getMaxValue = (datasets: Dataset[]) => {
-    let result = 0;
+  let result = 0;
 
-    datasets.forEach((dataset) => {
-        const maxDatasetValue = Math.max(...dataset.values);
+  datasets.forEach((dataset) => {
+    const maxDatasetValue = Math.max(...dataset.values);
 
-        if (maxDatasetValue > result) {
-            result = maxDatasetValue;
-        }
-    });
+    if (maxDatasetValue > result) {
+      result = maxDatasetValue;
+    }
+  });
 
-    return result;
+  return result;
 };

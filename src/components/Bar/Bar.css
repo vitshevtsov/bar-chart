@@ -1,7 +1,7 @@
 .bar {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .bar:hover {
-    opacity: 1;
+  opacity: 1;
 }
