@@ -13,10 +13,7 @@ const Chart: React.FC<ChartProps> = (props) => {
     const maxValue = getMaxValue(props.data.datasets);
 
     return (
-        <div
-            className={`chart ${props.className ?? ''}`}
-            style={{ flexDirection: props.horizontal ? 'row' : 'column' }}
-        >
+        <div className={`chart ${props.horizontal && 'chart--horizontal'} ${props.className ?? ''}`}>
             <Legend datasets={props.data.datasets} />
 
             <div

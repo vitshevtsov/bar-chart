@@ -15,11 +15,6 @@ export interface ChartProps {
     barWidth?: number;
 
     /**
-     * Цвет фона
-     */
-    bgColor?: string;
-
-    /**
      * CSS-класс для дополнительной стилизации
      */
     className?: string;
